@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appdeployment:Deployment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:appdeployment="http://www.ibm.com/websphere/appserver/schemas/5.0/appdeployment.xmi" xmi:id="Deployment_1280415514124">
+  <deployedObject xmi:type="appdeployment:ApplicationDeployment" xmi:id="ApplicationDeployment_1280415514124" startingWeight="10">
+    <modules xmi:type="appdeployment:WebModuleDeployment" xmi:id="WebModuleDeployment_1280415514124" startingWeight="10000" uri="LibProject.war"/>
+    <classloader xmi:id="Classloader_1280415514124" mode="PARENT_FIRST">
+      <libraries xmi:id="LibraryRef_1280415514124" libraryName="JDBC Driver Jars"/>
+    </classloader>
+  </deployedObject>
+</appdeployment:Deployment>

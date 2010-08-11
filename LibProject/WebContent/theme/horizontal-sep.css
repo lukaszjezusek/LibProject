@@ -1,0 +1,88 @@
+@CHARSET "UTF-8";
+
+/******************************************
+  Horizontal Bar Sample
+  Specification file: horizontal-sep
+ ******************************************/
+
+/*
+ * Each link of the site navigation is organized into rows/colomns using a table.
+ * This style applies to the table.
+ */
+.hsep_table {
+	border-width: 0px;
+	border-style: none;
+	padding: 1px;
+}
+
+/*
+ * This style applies to the body in the table.
+ */
+.hsep_table_body {
+	border-style: none;
+	padding: 1px;
+}
+
+/*
+ * This style applies to the row in the table.
+ */
+.hsep_table_row {
+	border-style: none;
+	padding: 1px;
+}
+
+/*
+ * This style applies to each cell in the table.
+ */
+.hsep_cell_normal {
+}
+
+/*
+ * This style applies to the cell which represents a group.
+ */
+.hsep_cell_group {
+    padding-top: 4px;
+    padding-bottom: 5px;
+}
+
+
+/*
+ * This style applies to the cell which represents a separator.
+ */
+.hsep_cell_separator {
+	background-image: url("sep.gif");
+	background-repeat: repeat;
+	width: 2px;
+	height: 22px;
+}
+
+/*
+ * This style applies to each item in the cell. (e.g., to the <a> tag)
+ */
+.hsep_item_normal {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #666699;
+	font-weight: bold;
+    font-size: 11px;
+	text-transform: lowercase;
+	text-decoration: none;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding : 5px;
+}
+
+/*
+ * This style applies to the item which displays a group name. (e.g., to the <span> tag)
+ */
+.hsep_item_group {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #333399;
+	font-weight: bold;
+	text-decoration: none;
+    font-size: 11px;
+    padding-left: 2px;
+	padding-right: 2px;
+	padding : 5px;
+	text-transform: uppercase;
+}
+

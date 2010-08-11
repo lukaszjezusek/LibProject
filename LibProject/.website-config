@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><website version="700">
+    <structure>
+        <description/>
+        <author/>
+        <page id="1" nid="1" servleturl="/LibProject/books.faces" src="/WebContent/books.xhtml">
+            <title>Wszystkie książki</title>
+            <page id="2" nid="2" servleturl="/LibProject/search.faces" src="/WebContent/search.xhtml">
+                <title>Szukaj</title>
+            </page>
+        </page>
+    </structure>
+</website>

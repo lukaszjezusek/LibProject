@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:composite="http://java.sun.com/jsf/composite" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+
+<composite:interface>
+	<composite:attribute name="bookId" type="java.lang.String"
+		required="true"></composite:attribute>
+	<composite:attribute name="title" type="java.lang.String"></composite:attribute>
+	<composite:attribute name="author" type="java.lang.String"></composite:attribute>
+	<composite:attribute name="picsrc" type="java.lang.String"></composite:attribute>
+</composite:interface>
+<composite:implementation>
+	<h:head>
+		<title>bookBasicInfo</title>
+		<meta http-equiv="Content-Type"
+			content="application/xhtml+xml; charset=UTF-8" />
+		<meta name="GENERATOR"
+			content="Rational® Application Developer for WebSphere® Software" />
+	</h:head>
+	<h:body>
+		<h:panelGroup styleClass="panelGroup" id="group2" layout="block"
+			style="border: thin solid grey; border-left: none; border-right: none; padding: 5px">
+			<h:graphicImage styleClass="graphicImage" id="image1"
+				style="float: left" height="115" value="#{cc.attrs.picsrc}"></h:graphicImage>
+			<h:panelGroup styleClass="panelGroup" id="group1" layout="block">
+				<h:outputText styleClass="outputText" id="text2" value="Tytuł: "></h:outputText>
+				<h:link value="#{cc.attrs.title}" styleClass="link" id="link1"
+					outcome="viewbook">
+					<f:param name="id" value="#{cc.attrs.bookId}"></f:param>
+				</h:link>
+				<f:verbatim>
+					<br />
+				</f:verbatim>
+				<h:outputText styleClass="outputText" id="text1"
+					value="Autor: #{cc.attrs.author}">
+					<br />
+					<br />
+				</h:outputText>
+			</h:panelGroup>
+			<h:panelGroup styleClass="panelGroup" id="group3" layout="block"
+				style="clear: both"></h:panelGroup>
+		</h:panelGroup>
+	</h:body>
+</composite:implementation>
+</html>

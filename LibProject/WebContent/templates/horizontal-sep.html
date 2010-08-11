@@ -1,0 +1,38 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>horizontal-sep</title>
+<link rel="stylesheet" type="text/css" href="../theme/horizontal-sep.css">
+</head>
+<body>
+<table class="hsep_table" cellpadding="0" cellspacing="4">
+	<tbody class="hsep_table_body">
+		<tr class="hsep_table_row">
+<!-- siteedit:forEach var="item" items="${sitenav.items}" begin="0" step="1" varStatus="status" -->
+ <!-- siteedit:choose -->
+  <!-- siteedit:when test="${item.group}" -->
+   <!-- siteedit:if test="${!status.first}" -->
+			<td class="hsep_cell_separator"></td>
+			<td class="hsep_cell_separator"></td>
+   <!-- /siteedit:if -->
+			<td class="hsep_cell_group">
+			<span class="hsep_item_group">${item.label}</span>
+			</td>
+  <!-- /siteedit:when -->
+  <!-- siteedit:otherwise -->
+   <!-- siteedit:if test="${!status.first}" -->
+			<td class="hsep_cell_separator"></td>
+   <!-- /siteedit:if -->
+			<td class="hsep_cell_normal">
+			<a href="${item.href}" class="hsep_item_normal">${item.label}</a>
+			</td>
+  <!-- /siteedit:otherwise -->
+ <!-- /siteedit:choose -->
+<!-- /siteedit:forEach -->
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<connections:connections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:connections="http://www.ibm.com/websphere/wdo/connections">
+  <connection id="New Derby">
+    <development xsi:type="connections:rsc-live-connection" id="New Derby_dev" name="New Derby"/>
+    <runtime xsi:type="connections:datasource-connection" auto-deploy="true" class-location="${DERBY_JDBC_DRIVER_PATH}/derby.jar" id="New Derby_runtime" classname="org.apache.derby.jdbc.EmbeddedConnectionPoolDataSource" database-location="/root/MyDB;create=true" database-name="MyDB" jndi-name="jdbc/New Derby" resource-reference-name="New Derby" server-name="derby:/root/MyDB" sql-vendor-type="50" userid=""/>
+  </connection>
+</connections:connections>

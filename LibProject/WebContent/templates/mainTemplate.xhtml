@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- jsf:pagecode language="java" location="/src/pagecode/templates/MainTemplate.java" --><!-- /jsf:pagecode -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:insert name="pagemetadata"></ui:insert>
+
+<h:head>
+	<title><ui:insert name="pagetitle">mainTemplate</ui:insert></title>
+	<meta http-equiv="Content-Type"
+		content="application/xhtml+xml; charset=UTF-8" />
+	<meta name="GENERATOR"
+		content="Rational® Application Developer for WebSphere® Software" />
+
+	<link rel="stylesheet" type="text/css"
+		href="../theme/horizontal-sep.css" />
+</h:head>
+<h:body>
+
+	<!-- siteedit:navbar target="home,children,parent,topchildren,self" spec="horizontal-sep.html" -->
+<table class="hsep_table" cellpadding="0" cellspacing="4">
+	<tbody class="hsep_table_body">
+		<tr class="hsep_table_row">
+						<td class="hsep_cell_normal"><a href="/LibProject/books.faces" class="hsep_item_normal">Wszystkie książki</a></td>
+							<td class="hsep_cell_separator"></td>
+						<td class="hsep_cell_normal"><a href="/LibProject/search.faces" class="hsep_item_normal">Szukaj</a></td>
+		</tr>
+	</tbody>
+</table>
+<!-- /siteedit:navbar -->
+	<hr />
+
+	<f:verbatim><br /></f:verbatim>
+		<ui:insert name="bodyarea"></ui:insert>
+
+</h:body>
+</html>

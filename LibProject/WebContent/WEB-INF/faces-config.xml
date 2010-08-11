@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+    version="2.0">
+	<managed-bean>
+		<managed-bean-name>pc_Books1</managed-bean-name>
+		<managed-bean-class>pagecode.Books1</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>pc_Viewbook</managed-bean-name>
+		<managed-bean-class>pagecode.Viewbook</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>pc_Viewbook1</managed-bean-name>
+		<managed-bean-class>pagecode.Viewbook1</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>pc_Viewbook2</managed-bean-name>
+		<managed-bean-class>pagecode.Viewbook2</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>pc_Viewbook3</managed-bean-name>
+		<managed-bean-class>pagecode.Viewbook3</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>pc_Books2</managed-bean-name>
+		<managed-bean-class>pagecode.Books2</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>pc_MainTemplate</managed-bean-name>
+		<managed-bean-class>pagecode.templates.MainTemplate</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>pc_Books3</managed-bean-name>
+		<managed-bean-class>pagecode.Books3</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>BookManager</managed-bean-name>
+		<managed-bean-class>pagecode.controller.BookManager</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>pc_Search1</managed-bean-name>
+		<managed-bean-class>pagecode.Search1</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>pc_Search2</managed-bean-name>
+		<managed-bean-class>pagecode.Search2</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>pc_Search3</managed-bean-name>
+		<managed-bean-class>pagecode.Search3</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<navigation-rule>
+		<display-name>books.xhtml</display-name>
+		<from-view-id>/books.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>viewbook</from-outcome>
+			<to-view-id>/viewbook.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+    
+</faces-config>

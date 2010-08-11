@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf12797116085620" configfile="/LibProject/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="books.xhtml" x="84" y="144" id="pf12797117037491" outlinks="pf12797117037492" path="/books.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="viewbook.xhtml" x="373" y="163" id="pf12797117037493" inlinks="pf12797117037492" path="/viewbook.xhtml"/>
+  <links id="pf12797117037492" target="pf12797117037493" source="pf12797117037491" outcome="viewbook"/>
+</pageflow:Pageflow>
