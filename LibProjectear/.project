@@ -4,7 +4,6 @@
 	<comment></comment>
 	<projects>
 		<project>LibProject</project>
-		<project>jpatest</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

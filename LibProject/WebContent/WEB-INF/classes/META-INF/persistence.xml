@@ -3,6 +3,8 @@
 	<persistence-unit name="LibProject">
 		<jta-data-source>java:comp/env/New Derby</jta-data-source>
 		<class>databasecode.Book</class>
+		<class>databasecode.User</class>
+		<class>databasecode.Review</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<property name="openjpa.jdbc.Schema" value="APP"/>

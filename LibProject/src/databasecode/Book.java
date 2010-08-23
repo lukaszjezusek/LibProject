@@ -3,7 +3,11 @@ package databasecode;
 import java.io.Serializable;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.ArrayList;
+import java.util.Collection;
 import javax.persistence.*;
+
+import databasecode.Review;
 
 /**
  * Entity implementation class for Entity: Book
@@ -14,7 +18,8 @@ import javax.persistence.*;
 	@NamedQuery(name="getBooksSortByTitleASC", query="SELECT b from Book b WHERE b.title LIKE :title AND b.author LIKE :author ORDER BY b.title ASC"),
 	@NamedQuery(name="getBooksSortByTitleDESC", query="SELECT b from Book b WHERE b.title LIKE :title AND b.author LIKE :author ORDER BY b.title DESC"),
 	@NamedQuery(name="getBooksSortByAuthorASC", query="SELECT b from Book b WHERE b.title LIKE :title AND b.author LIKE :author ORDER BY b.author ASC"),
-	@NamedQuery(name="getBooksSortByAuthorDESC", query="SELECT b from Book b WHERE b.title LIKE :title AND b.author LIKE :author ORDER BY b.author DESC")
+	@NamedQuery(name="getBooksSortByAuthorDESC", query="SELECT b from Book b WHERE b.title LIKE :title AND b.author LIKE :author ORDER BY b.author DESC"),
+	@NamedQuery(name="getBookWithReviews", query="SELECT b from Book b LEFT JOIN FETCH b.reviews WHERE b.id = :id")
 })
 public class Book implements Serializable {
 
@@ -24,10 +29,13 @@ public class Book implements Serializable {
 	private String title;
 	private String author;
 	private String picsrc;
+	@OneToMany(mappedBy="book", fetch=FetchType.LAZY)
+	private Collection<Review> reviews;
 	private static final long serialVersionUID = 1L;
 
 	public Book() {
 		super();
+		reviews = new ArrayList<Review>();
 	}   
 	public Integer getId() {
 		return this.id;
@@ -57,6 +65,13 @@ public class Book implements Serializable {
 	public void setPicsrc(String picsrc) {
 		this.picsrc = picsrc;
 	}
+	public void setReviews(Collection<Review> reviews) {
+		this.reviews = reviews;
+	}
+	public Collection<Review> getReviews() {
+		return reviews;
+	}
+	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#hashCode()
 	 */

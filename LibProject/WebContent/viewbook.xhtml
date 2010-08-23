@@ -23,6 +23,26 @@
 		<f:verbatim>
 				<br />
 			</f:verbatim>
+			Recenzji: 
+			<h:outputText styleClass="outputText" id="text1" value="#{viewBook.reviewsNumber}"></h:outputText>
+			
+			<f:verbatim>
+				<br /><br />
+			</f:verbatim>
+			
+			<ui:repeat var="currentReview" value="#{viewBook.book.reviews}">
+			<utils:bookReview review="#{currentReview.content}" user="#{currentReview.user.name }" date="#{currentReview.addDateString }"></utils:bookReview>
+
+			<f:verbatim><br /></f:verbatim>
+		</ui:repeat>
+		
+		<f:verbatim><br /></f:verbatim>
+		
+		<h:link value="Dodaj recenzję" styleClass="link" id="link1" outcome="addReview"
+			includeViewParams="false">
+			<f:param value="#{viewBook.id}" name="id" id="param1"></f:param>
+		</h:link>
 
 	</ui:define>
 </ui:composition>
+<!-- jsf:pagecode language="java" location="/src/pagecode/Viewbook4.java" --><!-- /jsf:pagecode -->

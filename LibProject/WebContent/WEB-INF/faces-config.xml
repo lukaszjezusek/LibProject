@@ -46,11 +46,6 @@
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
 	<managed-bean>
-		<managed-bean-name>BookManager</managed-bean-name>
-		<managed-bean-class>pagecode.controller.BookManager</managed-bean-class>
-		<managed-bean-scope>request</managed-bean-scope>
-	</managed-bean>
-	<managed-bean>
 		<managed-bean-name>pc_Search1</managed-bean-name>
 		<managed-bean-class>pagecode.Search1</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
@@ -65,9 +60,35 @@
 		<managed-bean-class>pagecode.Search3</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>pc_Viewbook4</managed-bean-name>
+		<managed-bean-class>pagecode.Viewbook4</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>pc_AddReview1</managed-bean-name>
+		<managed-bean-class>pagecode.AddReview1</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
 	<navigation-rule>
 		<display-name>books.xhtml</display-name>
 		<from-view-id>/books.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>viewbook</from-outcome>
+			<to-view-id>/viewbook.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>viewbook.xhtml</display-name>
+		<from-view-id>/viewbook.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>addReview</from-outcome>
+			<to-view-id>/addReview.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>addReview.xhtml</display-name>
+		<from-view-id>/addReview.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>viewbook</from-outcome>
 			<to-view-id>/viewbook.xhtml</to-view-id>

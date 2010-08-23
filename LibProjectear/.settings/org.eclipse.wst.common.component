@@ -2,7 +2,7 @@
     <wb-module deploy-name="LibProjectear">
         <wb-resource deploy-path="/" source-path="/"/>
         <dependent-module archiveName="LibProject.war" deploy-path="/" handle="module:/resource/LibProject/LibProject">
-            <dependent-object>Module_1279622919749</dependent-object>
+            <dependent-object>Module_1282141822383</dependent-object>
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="jpatest.jar" deploy-path="/" handle="module:/resource/jpatest/jpatest">

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf12797116085620" configfile="/LibProject/WebContent/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="books.xhtml" x="84" y="144" id="pf12797117037491" outlinks="pf12797117037492" path="/books.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="viewbook.xhtml" x="373" y="163" id="pf12797117037493" inlinks="pf12797117037492" path="/viewbook.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="books.xhtml" x="84" y="144" id="pf12797117037491" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf12797117037492" path="/books.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="viewbook.xhtml" x="360" y="180" id="pf12797117037493" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf12822358787300" inlinks="pf12797117037492 pf12822424024062" path="/viewbook.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="addReview.xhtml" x="660" y="192" id="pf12822358787311" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" outlinks="pf12822424024062" inlinks="pf12822358787300" path="/addReview.xhtml"/>
   <links id="pf12797117037492" target="pf12797117037493" source="pf12797117037491" outcome="viewbook"/>
+  <links id="pf12822358787300" target="pf12822358787311" source="pf12797117037493" outcome="addReview"/>
+  <links id="pf12822424024062" target="pf12797117037493" source="pf12822358787311" outcome="viewbook"/>
 </pageflow:Pageflow>

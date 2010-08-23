@@ -1,14 +1,15 @@
 package pagecode;
 
 import javax.ejb.EJB;
-import javax.faces.bean.ManagedBean;
-import javax.faces.model.SelectItem;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
+import javax.faces.model.SelectItem;
 import databasecode.Book;
 import databasecode.BookManagerBean;
 import databasecode.SortType;
 
-//import pagecode.controller.BookManager;
+import java.security.*;
 
 import java.util.*;
 
@@ -22,6 +23,12 @@ public class Search {
 	
 	String searchTitle = "";
 	String searchAuthor = "";
+	
+/*	public String getUsr() {
+		FacesContext fc = FacesContext.getCurrentInstance();
+		Principal p = fc.getExternalContext().getUserPrincipal();
+		return p.getName();
+	} */
 	
 	public String getSearchTitle() {
 		return searchTitle;

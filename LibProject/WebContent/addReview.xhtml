@@ -1,0 +1,42 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:utils="http://java.sun.com/jsf/composite/utils"
+	template="templates/mainTemplate.xhtml">
+	
+	<ui:define name="pagematadata">
+	<f:metadata>
+	<f:viewParam name="id" value="#{addReview.bookId}"></f:viewParam>
+</f:metadata>
+	</ui:define>
+
+	<ui:define name="pagetitle">Dodaj recenzję: #{addReview.book.author } - #{addReview.book.title }</ui:define>
+
+	<ui:define name="bodyarea">
+	
+	<h:form styleClass="form" id="form1">
+
+	<h:outputText styleClass="outputText" id="text1" value="Dodajesz recenzję do książki: "></h:outputText>
+	 
+	<h:link value="#{addReview.book.title } (#{addReview.book.author })" styleClass="link" id="link1" outcome="viewbook">
+		<f:param name="id" value="#{addReview.book.id }"></f:param>
+	</h:link>
+	
+			<f:verbatim>
+				<br /><br />
+			</f:verbatim>
+			<h:inputTextarea styleClass="inputTextarea" id="textarea1"
+				value="#{addReview.content }"
+				style="height: 70%; width: 70%; background-color: #e6e3e3"></h:inputTextarea>
+			<f:verbatim>
+				<br /><br />
+			</f:verbatim>
+			<h:commandButton type="submit" value="Dodaj recenzję"
+				styleClass="commandButton" id="button1" action="#{addReview.addReview }">
+				</h:commandButton>
+		</h:form>
+		
+		</ui:define>
+</ui:composition>
+<!-- jsf:pagecode language="java" location="/src/pagecode/AddReview1.java" --><!-- /jsf:pagecode -->

@@ -16,6 +16,10 @@ public class ViewBook {
 	public Book getBook() {
 		return book;
 	}
+	
+	public int getReviewsNumber() {
+		return book.getReviews().size();
+	}
 
 	public int getId() {
 		return id;

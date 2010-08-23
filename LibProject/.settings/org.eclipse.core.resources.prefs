@@ -1,7 +1,9 @@
-#Sun Aug 08 17:27:51 CEST 2010
+#Thu Aug 19 17:06:00 CEST 2010
 encoding//WebContent/search.xhtml=UTF-8
 encoding//WebContent/templates/mainTemplate.xhtml=UTF-8
 encoding//WebContent/resources/utils/bookBasicInfo.xhtml=UTF-8
+encoding//WebContent/addReview.xhtml=UTF-8
 eclipse.preferences.version=1
 encoding//WebContent/books.xhtml=UTF-8
 encoding//WebContent/viewbook.xhtml=UTF-8
+encoding//WebContent/resources/utils/bookReview.xhtml=UTF-8

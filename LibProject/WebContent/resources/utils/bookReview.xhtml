@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:composite="http://java.sun.com/jsf/composite" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+
+
+<composite:interface>
+	<composite:attribute name="review" type="java.lang.String"></composite:attribute>
+	<composite:attribute name="user" type="java.lang.String"></composite:attribute>
+	<composite:attribute name="date" type="java.lang.String"></composite:attribute>
+</composite:interface>
+<composite:implementation>
+<h:body>
+		<h:panelGroup styleClass="panelGroup" id="group2" layout="block"
+			style="border: thin solid grey; padding: 0; ">
+			<h:panelGroup styleClass="panelGroup" id="group5" layout="block" style="border-bottom: thin solid gray; background-color: silver;">
+				<h:panelGroup styleClass="panelGroup" layout="block" style="float: left" id="group4">
+					<h:outputText styleClass="outputText" id="text2" value="Autor: #{cc.attrs.user }"></h:outputText>
+				</h:panelGroup>
+				<h:panelGroup styleClass="panelGroup" layout="block" style="float: right" id="group1">
+					<h:outputText styleClass="outputText"  id="text3" value="#{cc.attrs.date }"></h:outputText>
+				</h:panelGroup>
+				<h:panelGroup styleClass="panelGroup" layout="block" style="clear: both" id="group3"></h:panelGroup>
+			</h:panelGroup>
+			<h:panelGroup styleClass="panelGroup" id="group6" layout="block" style="padding: 5px">
+				<h:outputText styleClass="outputText" id="text1" value="#{cc.attrs.review }"></h:outputText>
+			</h:panelGroup>		
+		</h:panelGroup>
+		
+	</h:body>
+</composite:implementation>
+</html>
