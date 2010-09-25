@@ -11,20 +11,30 @@
 	<ui:define name="pagetitle">Wszystkie książki</ui:define>
 
 	<ui:define name="bodyarea">
+	
 		<h:form styleClass="form" id="form1">
 			<h:outputText styleClass="outputText" id="text1" value="Sortowanie: "></h:outputText>
 			<h:selectOneMenu styleClass="selectOneMenu" id="menu1" title="Sortowanie" onchange="submit()" value="#{books.choosenSort}" required="true" immediate="true">
 				<f:selectItems value="#{books.sortSelectItems}" id="selectItems1"></f:selectItems>
 			</h:selectOneMenu>
 		</h:form>
+		
 		<hr />
-		<f:verbatim><br /></f:verbatim>
+		
+		<f:verbatim>
+			<br />
+		</f:verbatim>
+		
 		<ui:repeat var="currentBook" value="#{books.booksList}">
 			<utils:bookBasicInfo author="#{currentBook.author}"
 				picsrc="#{currentBook.picsrc}" title="#{currentBook.title}"
-				bookId="#{currentBook.id}"></utils:bookBasicInfo>
+				bookId="#{currentBook.id}">
+			</utils:bookBasicInfo>
 
-			<f:verbatim><br /></f:verbatim>
+			<f:verbatim>
+				<br />
+			</f:verbatim>
+			
 		</ui:repeat>
 
 	</ui:define>

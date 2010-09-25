@@ -18,7 +18,6 @@ public class UserManagerBean {
      * Default constructor. 
      */
     public UserManagerBean() {
-        // TODO Auto-generated constructor stub
     }
     
     public Object getUser(String name) {
@@ -28,6 +27,12 @@ public class UserManagerBean {
     	catch(NoResultException e) {
     		return null;
     	}
+    }
+    
+    public void saveUser(Object user) {
+    	User u = (User) user;
+    	em.persist(u);
+    	em.flush();
     }
 
 }

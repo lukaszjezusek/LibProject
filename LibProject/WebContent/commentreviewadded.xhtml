@@ -1,0 +1,40 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:utils="http://java.sun.com/jsf/composite/utils"
+	template="templates/mainTemplate.xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+	<ui:define name="pagetitle">Dodałeś komentarz do recenzji</ui:define>
+
+	<ui:define name="bodyarea">
+		<h:outputText styleClass="outputText" id="text1"
+			value="Dodałeś komentarz do recenzji: ">
+		</h:outputText>
+		
+		<h:link
+			value="#{bookReview.review.user.name } (#{bookReview.review.addDateString })"
+			styleClass="link" id="link2" outcome="bookreview"
+			includeViewParams="false">
+			<f:param value="#{bookReview.review.id }" name="id" id="param1"></f:param>
+		</h:link>
+
+		<f:verbatim>
+			<br />
+		</f:verbatim>
+		
+		<h:outputText styleClass="outputText" id="text2" value="dotyczącej książki: "></h:outputText>
+		
+		<f:verbatim>
+			<br /><br />
+		</f:verbatim>
+		
+		<utils:bookBasicInfo author="#{bookReview.review.book.author}"
+			picsrc="#{bookReview.review.book.picsrc}" title="#{bookReview.review.book.title}"
+			bookId="#{bookReview.review.book.id}">
+		</utils:bookBasicInfo>
+
+	</ui:define>
+</ui:composition>
+<!-- jsf:pagecode language="java" location="/src/pagecode/Commentreviewadded.java" --><!-- /jsf:pagecode -->

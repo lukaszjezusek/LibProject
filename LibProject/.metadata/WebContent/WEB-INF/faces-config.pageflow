@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf12797116085620" configfile="/LibProject/WebContent/WEB-INF/faces-config.xml">
   <nodes xsi:type="pageflow:PFPage" name="books.xhtml" x="84" y="144" id="pf12797117037491" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf12797117037492" path="/books.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="viewbook.xhtml" x="360" y="180" id="pf12797117037493" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf12822358787300" inlinks="pf12797117037492 pf12822424024062" path="/viewbook.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="addReview.xhtml" x="660" y="192" id="pf12822358787311" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" outlinks="pf12822424024062" inlinks="pf12822358787300" path="/addReview.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="viewbook.xhtml" x="360" y="180" id="pf12797117037493" referenceLink="//@navigationRule.6/@fromViewId|" outlinks="pf12822358787300 pf12845534002030 pf12845544383962 pf12846275262860 pf12846339055042 pf12853249267150" inlinks="pf12797117037492 pf12822424024062" path="/viewbook.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="addReview.xhtml" x="660" y="192" id="pf12822358787311" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf12822424024062 pf12846343718704" inlinks="pf12822358787300" path="/addReview.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="returnbook.xhtml" x="216" y="334" id="pf12845534002031" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf12845534002030" path="/returnbook.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="askborrowbook.xhtml" x="444" y="336" id="pf12845544383963" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" inlinks="pf12845544383962" path="/askborrowbook.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="bookreview.xhtml" x="353" y="36" id="pf12846275262871" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" inlinks="pf12846275262860" path="/bookreview.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="commentbookadded.xhtml" x="108" y="36" id="pf12846339055083" referenceLink="//@navigationRule.6/@navigationCase.0/@toViewId|" inlinks="pf12846339055042" path="/commentbookadded.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="commentreviewadded.xhtml" x="540" y="36" id="pf12846343718705" referenceLink="//@navigationRule.7/@navigationCase.0/@toViewId|" inlinks="pf12846343718704" path="/commentreviewadded.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="register.xhtml" x="174" y="248" id="pf12853249267151" outlinks="pf12853249267152 pf12853249267153" inlinks="pf12853249267150" path="/register.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="registered.xhtml" x="12" y="212" id="pf12853249267154" inlinks="pf12853249267152" path="/registered.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="registererror.xhtml" x="24" y="316" id="pf12853249267165" inlinks="pf12853249267153" path="/registererror.xhtml"/>
   <links id="pf12797117037492" target="pf12797117037493" source="pf12797117037491" outcome="viewbook"/>
   <links id="pf12822358787300" target="pf12822358787311" source="pf12797117037493" outcome="addReview"/>
   <links id="pf12822424024062" target="pf12797117037493" source="pf12822358787311" outcome="viewbook"/>
+  <links id="pf12845534002030" target="pf12845534002031" source="pf12797117037493" outcome="returnbook"/>
+  <links id="pf12845544383962" target="pf12845544383963" source="pf12797117037493" outcome="askborrowbook"/>
+  <links id="pf12846275262860" target="pf12846275262871" source="pf12797117037493" outcome="bookreview"/>
+  <links id="pf12846339055042" target="pf12846339055083" source="pf12797117037493" outcome="commentbookadded"/>
+  <links id="pf12846343718704" target="pf12846343718705" source="pf12822358787311" outcome="commentreviewadded"/>
+  <links id="pf12853249267150" target="pf12853249267151" source="pf12797117037493" outcome="register"/>
+  <links id="pf12853249267152" target="pf12853249267154" source="pf12853249267151" outcome="registered"/>
+  <links id="pf12853249267153" target="pf12853249267165" source="pf12853249267151" outcome="registererror"/>
 </pageflow:Pageflow>

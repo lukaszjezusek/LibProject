@@ -1,0 +1,6 @@
+/* AUTOMATICALLY GENERATED ON Tue Sep 21 13:54:44 CEST 2010*/
+/* DO NOT EDIT */
+
+grant codeBase "file:${webComponent}" {
+  permission java.io.FilePermission "/home/hez/r/IBM/WebSphere/AppServer/profiles/AppSrv04/config/cells/localhostNode04Cell/fileRegistry.xml", "read, write";
+};

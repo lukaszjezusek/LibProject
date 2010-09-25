@@ -4,6 +4,7 @@ import javax.ejb.LocalBean;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 
 /**
@@ -18,7 +19,6 @@ public class ReviewManagerBean {
      * Default constructor. 
      */
     public ReviewManagerBean() {
-        // TODO Auto-generated constructor stub
     }
     
     public void saveReview(Object review) {
@@ -27,4 +27,14 @@ public class ReviewManagerBean {
     	em.flush();
     }
 
+    
+    public Object getReview(int id) {
+    	try {
+    		return (Review) em.createNamedQuery("getReviewWithComments").setParameter("id", id).getSingleResult();
+    	}
+    	catch(NoResultException e) {
+    		return null;
+    	}
+    	
+    } 
 }

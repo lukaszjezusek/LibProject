@@ -1,0 +1,59 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:utils="http://java.sun.com/jsf/composite/utils"
+	template="templates/mainTemplate.xhtml">
+
+	<ui:define name="pagetitle">Bibliotekarz</ui:define>
+
+	<ui:define name="bodyarea">
+
+		<h:outputText styleClass="outputText" id="text3" value="Zapytania o wypożyczenie: " style="font-style: normal; font-weight: bold"></h:outputText>
+		
+		<f:verbatim>
+			<br /><br />
+		</f:verbatim>
+
+		<h:form styleClass="form" id="form1">
+		
+			<ui:repeat var="currentBorrow" value="#{librarian.askBorrow }">
+				<h:panelGroup styleClass="panelGroup" layout="block" id="group1">
+					<h:panelGroup styleClass="panelGroup" layout="block" id="group2">
+						<h:outputText styleClass="outputText" id="text1" value="Książka: "></h:outputText>
+						<h:link
+							value="#{currentBorrow.book.title } - #{currentBorrow.book.author }"
+							styleClass="link" id="link1" outcome="viewbook">
+							<f:param name="id" value="#{currentBorrow.book.id}"></f:param>
+						</h:link>
+						
+						<f:verbatim>
+							<br />
+						</f:verbatim>
+						
+						<h:outputText styleClass="outputText" id="text2"
+							value="Wypożyczający: #{currentBorrow.user.name }">
+						</h:outputText>
+						
+						<f:verbatim>
+							<br />
+						</f:verbatim>
+						
+					</h:panelGroup>
+					<h:panelGroup styleClass="panelGroup" id="group3">
+						<h:commandButton type="submit" value="Wypożycz"
+							styleClass="commandButton" id="button2" action="#{librarian.borrow(currentBorrow) }">
+						</h:commandButton>
+					</h:panelGroup>
+				</h:panelGroup>
+				
+				<f:verbatim>
+					<br />
+				</f:verbatim>
+				
+			</ui:repeat>
+		</h:form>
+	
+	</ui:define>
+</ui:composition>
+<!-- jsf:pagecode language="java" location="/src/pagecode/Librarian1.java" --><!-- /jsf:pagecode -->

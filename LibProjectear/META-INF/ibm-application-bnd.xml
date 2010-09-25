@@ -6,4 +6,6 @@
 	version="1.0">
 
 	<security-role name="USER">
-		<group name="USER" /></security-role></application-bnd>
+		<group name="USER" /></security-role>
+	<security-role name="LIBRARIAN">
+		<group name="LIBRARIAN" /></security-role></application-bnd>

@@ -4,7 +4,6 @@
 package pagecode;
 
 import javax.faces.component.html.HtmlCommandButton;
-import javax.faces.component.html.HtmlOutcomeTargetLink;
 import javax.faces.component.html.HtmlInputTextarea;
 import javax.faces.component.html.HtmlOutputText;
 
@@ -15,7 +14,6 @@ import javax.faces.component.html.HtmlOutputText;
 public class AddReview1 extends PageCodeBase {
 
 	protected HtmlCommandButton button1;
-	protected HtmlOutcomeTargetLink link1;
 	protected HtmlInputTextarea textarea1;
 	protected HtmlOutputText text1;
 	protected HtmlCommandButton getButton1() {
@@ -23,12 +21,6 @@ public class AddReview1 extends PageCodeBase {
 			button1 = (HtmlCommandButton) findComponentInRoot("button1");
 		}
 		return button1;
-	}
-	protected HtmlOutcomeTargetLink getLink1() {
-		if (link1 == null) {
-			link1 = (HtmlOutcomeTargetLink) findComponentInRoot("link1");
-		}
-		return link1;
 	}
 	protected HtmlInputTextarea getTextarea1() {
 		if (textarea1 == null) {

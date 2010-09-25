@@ -17,7 +17,6 @@ import javax.persistence.Query;
 @Stateless
 @LocalBean
 public class BookManagerBean {
-	//@PersistenceContext(type=PersistenceContextType.EXTENDED)
 	@PersistenceContext
 	EntityManager em;
 	
@@ -25,7 +24,6 @@ public class BookManagerBean {
      * Default constructor. 
      */
     public BookManagerBean() {
-        // TODO Auto-generated constructor stub
     }
     
     public List<SortType> getSortTypeList() {
@@ -48,26 +46,97 @@ public class BookManagerBean {
     	return getBooksListSorted(type, "", "");
     }
     
-    // TODO: Tutaj powinien byc zwracany Book zamiast Object
-    /* Po zamianie:
-     * javax.ejb.EJBException: See nested exception; nested exception is: <openjpa-2.1.0-SNAPSHOT-r422266:935231 fatal user error> org.apache.openjpa.persistence.ArgumentException: Errors encountered while resolving metadata. See nested exceptions for details.
-
-Caused by:
-org.apache.openjpa.persistence.ArgumentException - The type "class databasecode.Book" has not been enhanced.
-
-
-     */
     public Object getBook(int id) {
-    	//return em.find(Book.class, id);
-    	
     	try {
-    		return (Book) em.createNamedQuery("getBookWithReviews").setParameter("id", id).getSingleResult();
+    		return (Book) em.createNamedQuery("getBookWithCommentsAndReviews").setParameter("id", id).getSingleResult();
     	}
     	catch(NoResultException e) {
     		return null;
     	}
     	
-    	} 
+    } 
+    
+    @SuppressWarnings("unchecked")
+	public boolean isBookAvailable(Object book) {
+    	// czy ksiazka jest aktualnie dostepna do wypozyczenia
+    	try {
+    		List<BorrowedBook> listbb = (List<BorrowedBook>) em.createNamedQuery("getActiveBorrow").setParameter("book", (Book) book).getResultList();
+    		if (listbb.isEmpty())
+    			return true;
+    		else
+    			return false;
+    	}
+    	catch (Exception e) {
+    		return true;
+    	}
+    }
+    
+    @SuppressWarnings("unchecked")
+	public List<BorrowedBook> getBorrowed(Object book, Object user) {
+    	Book b = (Book) book;
+    	User u = (User) user;
+    	List<BorrowedBook> result = null;
+    	try {
+    		result = (List<BorrowedBook>) em.createNamedQuery("getBorrowed").setParameter("user", u).setParameter("book", b).getResultList();
+    	}
+    	catch(Exception e) {
+    		result = null;
+    	}
+    	
+    	return result;
+    }
+    
+    @SuppressWarnings("unchecked")
+	public List<BorrowedBook> getUserWaiting(Object book, Object user) {
+    	// zwraca nieropatrzone zapytania o wypozyczenie
+    	Book b = (Book) book;
+    	User u = (User) user;
+    	List<BorrowedBook> result = null;
+    	try {
+    		result = (List<BorrowedBook>) em.createNamedQuery("getUserWaiting").setParameter("book", b).setParameter("user", u).getResultList();
+    	}
+    	catch(Exception e) {
+    		result = null;
+    	}
+    	
+    	return result;
+    }
+    
+    public void saveBorrowedBook(Object borrowedBook) {
+    	BorrowedBook bb = (BorrowedBook) borrowedBook;
+    	em.persist(bb);
+    	em.flush();
+    }
+    
+    public void updateBorrowedBook(Object borrowedBook) {
+    	BorrowedBook bb = (BorrowedBook) borrowedBook;
+    	em.merge(bb);
+    	em.flush();
+    }
+    
+    public void deleteBorrowedBook(Object borrowedBook) {
+    	BorrowedBook bb = (BorrowedBook) borrowedBook;
+    	BorrowedBook bbb = em.merge(bb);
+    	em.remove(bbb);
+    	em.flush();
+    }
+    
+    @SuppressWarnings("unchecked")
+	public List<BorrowedBook> getAskBorrow() {
+    	List<BorrowedBook> result = (List<BorrowedBook>) em.createNamedQuery("getAskBorrow").getResultList();
+    	return result;
+    }
+    
+    @SuppressWarnings("unchecked")
+	public List<Book> getAvailableAskBorrow() {
+    	List<Book> result = (List<Book>) em.createNamedQuery("getAvailableAskBorrow").getResultList();
+    	return result;
+    }
+    
+    public Long getWaitingToBorrowNumber(Object book) {
+    	Long result = (Long) em.createNamedQuery("getWaitingToBorrowNumber").setParameter("book", (Book) book).getSingleResult();
+    	return result;
+    }
     
     @SuppressWarnings("unchecked")
 	public List<Book> getBooksList() {

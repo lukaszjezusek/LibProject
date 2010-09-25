@@ -18,16 +18,17 @@ import javax.persistence.*;
 })
 public class User implements Serializable {
 	   
-	@Id
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 	private String name;
-	@OneToMany(mappedBy="book", fetch=FetchType.LAZY)
+	@OneToMany(mappedBy="user", fetch=FetchType.LAZY)
 	private Collection<Review> reviews;
+	@OneToMany(mappedBy="user", fetch=FetchType.LAZY)
+	private Collection<BorrowedBook> borrowedBooks;
 	private static final long serialVersionUID = 1L;
 
 	public User() {
 		super();
-	//	reviews = new ArrayList<Review>();
 	}   
 	public Integer getId() {
 		return this.id;
@@ -50,12 +51,12 @@ public class User implements Serializable {
 	public void setReviews(Collection<Review> reviews) {
 		this.reviews = reviews;
 	}
-	//public void setReviews(List<Review> reviews) {
-	//	this.reviews = reviews;
-	////}
-	//public List<Review> getReviews() {
-	//	return reviews;
-	//}
+	public Collection<BorrowedBook> getBorrowedBooks() {
+		return borrowedBooks;
+	}
+	public void setBorrowedBooks(Collection<BorrowedBook> borrowedBooks) {
+		this.borrowedBooks = borrowedBooks;
+	}
 	/* (non-Javadoc)
 	 * @see java.lang.Object#hashCode()
 	 */

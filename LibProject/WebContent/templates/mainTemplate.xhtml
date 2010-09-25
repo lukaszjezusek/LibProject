@@ -35,7 +35,37 @@
 <!-- /siteedit:navbar -->
 	<hr />
 
-	<f:verbatim><br /></f:verbatim>
+	<h:panelGroup styleClass="panelGroup" id="mtgroup1" layout="block" rendered="#{userSession.logged }" style="float: right">
+
+		<h:outputText styleClass="outputText" id="mttext1"
+			value="Jesteś zalogowany jako #{userSession.user.name}."></h:outputText>
+
+		<f:verbatim>
+			<form method="post" action="ibm_security_logout" name="logout">
+			<p>
+			<input type="submit" name="logout" value="Wyloguj" />
+			<input type="hidden" name="logoutExitPage" value="/books.faces" />
+			</p>
+			</form>
+		</f:verbatim>
+
+	</h:panelGroup>
+
+	<h:panelGroup styleClass="panelGroup" id="mtgroup3" layout="block" rendered="#{!userSession.logged }" style="float: right">
+	
+		<h:outputText styleClass="outputText" id="mttext2" value="Jesteś niezalogowany."></h:outputText>
+		<f:verbatim><br /></f:verbatim>
+		<h:button value="Zaloguj" styleClass="button" id="mtbutton1"
+			outcome="/login.faces"></h:button>
+		<h:button value="Zarejestruj" styleClass="button" id="mtbutton2"
+			outcome="/register.faces"></h:button>
+			
+
+	</h:panelGroup>
+
+	<h:panelGroup styleClass="panelGroup" id="mtgroup2" layout="block" style="clear: both"></h:panelGroup>
+	<hr />
+	<f:verbatim><br /><br /></f:verbatim>
 		<ui:insert name="bodyarea"></ui:insert>
 
 </h:body>

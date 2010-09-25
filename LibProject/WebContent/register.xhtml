@@ -1,0 +1,25 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:utils="http://java.sun.com/jsf/composite/utils"
+	template="templates/mainTemplate.xhtml">
+
+	<ui:define name="pagetitle">Rejestracja użytkownika</ui:define>
+
+	<ui:define name="bodyarea">
+
+		<h:form styleClass="form" id="form1">
+			<h:outputText styleClass="outputText" id="text2" value="Login: "></h:outputText>
+			<h:inputText styleClass="inputText" id="text1" value="#{register.login }"></h:inputText>
+			<f:verbatim><br /></f:verbatim>
+			<h:outputText styleClass="outputText" id="text3" value="Hasło: "></h:outputText>
+			<h:inputText styleClass="inputText" id="text4" value="#{register.password }"></h:inputText>
+			<f:verbatim><br /></f:verbatim>
+			<h:commandButton type="submit" value="Rejestracja"
+				styleClass="commandButton" id="button1" action="#{register.register }"></h:commandButton>
+		</h:form>
+		
+	</ui:define>
+</ui:composition>
+<!-- jsf:pagecode language="java" location="/src/pagecode/Register1.java" --><!-- /jsf:pagecode -->

@@ -66,9 +66,6 @@ public class AddReview {
 			
 			rm.saveReview(r);
 		}
-		return "books";
+		return "reviewadded";
 	}
-	
-	
-
 }

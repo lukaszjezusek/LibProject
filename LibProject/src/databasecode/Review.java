@@ -2,6 +2,7 @@ package databasecode;
 
 import java.io.Serializable;
 import java.lang.Integer;
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.*;
@@ -11,13 +12,15 @@ import javax.persistence.*;
  *
  */
 @Entity
+@NamedQueries({
+	@NamedQuery(name="getReviewWithComments", query="SELECT r from Review r LEFT JOIN FETCH r.comments WHERE r.id = :id")
+})
 
 public class Review implements Serializable {
 
 	    
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
-	//@ManyToOne
 	@ManyToOne()
 	private Book book;
 	@ManyToOne
@@ -25,6 +28,8 @@ public class Review implements Serializable {
 	private String content;
 	@Temporal(TemporalType.DATE)
 	private Date addDate;
+	@OneToMany(mappedBy="review", fetch=FetchType.LAZY)
+	private Collection<CommentReview> comments;
 	private static final long serialVersionUID = 1L;
 
 	public Review() {
@@ -65,6 +70,14 @@ public class Review implements Serializable {
 	}
 	public String getAddDateString() {
 		return addDate.toString();
+	}
+	
+	
+	public Collection<CommentReview> getComments() {
+		return comments;
+	}
+	public void setComments(Collection<CommentReview> comments) {
+		this.comments = comments;
 	}
 	/* (non-Javadoc)
 	 * @see java.lang.Object#hashCode()

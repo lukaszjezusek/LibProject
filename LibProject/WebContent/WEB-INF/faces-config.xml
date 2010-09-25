@@ -70,6 +70,36 @@
 		<managed-bean-class>pagecode.AddReview1</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>pc_Librarian1</managed-bean-name>
+		<managed-bean-class>pagecode.Librarian1</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>pc_Returnbook</managed-bean-name>
+		<managed-bean-class>pagecode.Returnbook</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>pc_Register1</managed-bean-name>
+		<managed-bean-class>pagecode.Register1</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>pc_Commentreviewadded</managed-bean-name>
+		<managed-bean-class>pagecode.Commentreviewadded</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>pc_Loginerror</managed-bean-name>
+		<managed-bean-class>pagecode.Loginerror</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>pc_Bookreview</managed-bean-name>
+		<managed-bean-class>pagecode.Bookreview</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
 	<navigation-rule>
 		<display-name>books.xhtml</display-name>
 		<from-view-id>/books.xhtml</from-view-id>
@@ -92,6 +122,70 @@
 		<navigation-case>
 			<from-outcome>viewbook</from-outcome>
 			<to-view-id>/viewbook.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>viewbook.xhtml</display-name>
+		<from-view-id>/viewbook.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>returnbook</from-outcome>
+			<to-view-id>/returnbook.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>viewbook.xhtml</display-name>
+		<from-view-id>/viewbook.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>askborrowbook</from-outcome>
+			<to-view-id>/askborrowbook.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>viewbook.xhtml</display-name>
+		<from-view-id>/viewbook.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>bookreview</from-outcome>
+			<to-view-id>/bookreview.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>viewbook.xhtml</display-name>
+		<from-view-id>/viewbook.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>commentbookadded</from-outcome>
+			<to-view-id>/commentbookadded.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>addReview.xhtml</display-name>
+		<from-view-id>/addReview.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>commentreviewadded</from-outcome>
+			<to-view-id>/commentreviewadded.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>viewbook.xhtml</display-name>
+		<from-view-id>/viewbook.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>register</from-outcome>
+			<to-view-id>/register.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>register.xhtml</display-name>
+		<from-view-id>/register.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>registered</from-outcome>
+			<to-view-id>/registered.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>register.xhtml</display-name>
+		<from-view-id>/register.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>registererror</from-outcome>
+			<to-view-id>/registererror.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
     

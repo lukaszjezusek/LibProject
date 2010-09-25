@@ -5,6 +5,9 @@
 		<class>databasecode.Book</class>
 		<class>databasecode.User</class>
 		<class>databasecode.Review</class>
+		<class>databasecode.BorrowedBook</class>
+		<class>databasecode.CommentBook</class>
+		<class>databasecode.CommentReview</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<property name="openjpa.jdbc.Schema" value="APP"/>

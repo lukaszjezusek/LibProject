@@ -9,34 +9,55 @@
 
 	<ui:define name="bodyarea">
 
-
 		<h:form styleClass="form" id="form1">
 			<h:outputText styleClass="outputText" id="text2" value="Tytuł: "></h:outputText>
 			<h:inputText styleClass="inputText" id="text3" value="#{search.searchTitle }"></h:inputText>
-			<f:verbatim><br /></f:verbatim>
+			
+			<f:verbatim>
+				<br />
+			</f:verbatim>
+			
 			<h:outputText styleClass="outputText" id="text4" value="Autor: "></h:outputText>
 			<h:inputText styleClass="inputText" id="text5" value="#{search.searchAuthor }"></h:inputText>
-			<f:verbatim><br /></f:verbatim>
+			
+			<f:verbatim>
+				<br />
+			</f:verbatim>
+			
 			<h:outputText styleClass="outputText" id="text1" value="Sortowanie: "></h:outputText>
 			<h:selectOneMenu styleClass="selectOneMenu" id="menu1" title="Sortowanie" value="#{search.choosenSort}" required="true" immediate="true">
 				<f:selectItems value="#{search.sortSelectItems}" id="selectItems1"></f:selectItems>
 			</h:selectOneMenu>
-			<f:verbatim><br /></f:verbatim>
+			
+			<f:verbatim>
+				<br />
+			</f:verbatim>
+			
 			<h:commandButton type="submit" value="Szukaj"
 				styleClass="commandButton" id="button1">
 			</h:commandButton>
 		</h:form>
+		
 		<hr />
-		Znaleziono pasujących: <h:outputText styleClass="outputText"
-			id="text6" value=" #{search.resultsNumber}"></h:outputText>
-		<f:verbatim><br /></f:verbatim>
-		<f:verbatim><br /></f:verbatim>
+		
+		<h:outputText styleClass="outputText"
+			id="text6" value="Znaleziono pasujących: #{search.resultsNumber}">
+		</h:outputText>
+		
+		<f:verbatim>
+			<br /><br />
+		</f:verbatim>
+		
 		<ui:repeat var="currentBook" value="#{search.booksList}">
 			<utils:bookBasicInfo author="#{currentBook.author}"
 				picsrc="#{currentBook.picsrc}" title="#{currentBook.title}"
-				bookId="#{currentBook.id}"></utils:bookBasicInfo>
+				bookId="#{currentBook.id}">
+			</utils:bookBasicInfo>
 
-			<f:verbatim><br /></f:verbatim>
+			<f:verbatim>
+				<br />
+			</f:verbatim>
+			
 		</ui:repeat>
 
 	</ui:define>

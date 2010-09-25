@@ -6,6 +6,7 @@
 	version="1.0">
 
 	<reload-interval value="3"/>
+	
 	<enable-directory-browsing value="true"/>
 	<enable-file-serving value="true"/>
 	<enable-reloading value="true"/>
